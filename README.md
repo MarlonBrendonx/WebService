@@ -27,4 +27,5 @@ ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
 mkdir /usr/lib/cgi-bin
 
 ````
-** Execute o script de criação do banco contido em  **
+** Execute o script de criação do banco contido em script_mysql.txt <br/>
+e verifique as configurações de conexão presente em db_webservice.sh **
