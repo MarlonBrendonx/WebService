@@ -6,5 +6,17 @@
 * **Curl**  >=7.64      <br/>
 * **MySQL** >=8.02.25 <br/>
 * **Bash**  >= 5.0 <br/>
+* **Apache**  >=2.4.38 <br/>
 
 
+## Configurações:computer:
+**Permita que o apache interprete o shell**
+```bash
+Adicione a seguinte linha em /etc/apache2/apache2.conf
+
+<Directory /var/www/webservice/cgi-bin>
+        Options +ExecCGI
+        AddHandler cgi-script .sh
+</Directory>
+
+gcc multicast_UDP.c -lpthread
