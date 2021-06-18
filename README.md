@@ -14,9 +14,11 @@
 ```bash
 Adicione a seguinte linha em /etc/apache2/apache2.conf
 
-<Directory /var/www/webservice/cgi-bin>
+<Directory /var/www/cgi-bin>
         Options +ExecCGI
         AddHandler cgi-script .sh
 </Directory>
 
-gcc multicast_UDP.c -lpthread
+Crie o diretório /cgi-bin em /usr/lib/
+
+mkdir /usr/lib/cgi-bin
