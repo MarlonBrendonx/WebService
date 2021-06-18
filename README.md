@@ -21,7 +21,7 @@
 ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
 
 ```
-**Crie o diretório /cgi-bin em /usr/lib/ e clone os arquivos**
+**Crie o diretório /cgi-bin em /usr/lib/ e clone os arquivos para dentro do diretório**
 
 ```bash
 mkdir /usr/lib/cgi-bin
