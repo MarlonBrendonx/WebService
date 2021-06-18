@@ -29,3 +29,25 @@ mkdir /usr/lib/cgi-bin
 ````
 ** Execute o script de criação do banco contido em script_mysql.txt <br/>
 e verifique as configurações de conexão presente em db_webservice.sh **
+
+**Teste a inserção via POST através da ferramenta Curl**
+```bash
+curl --data "nome=Jhon&matricula=1234567&cpf=11545588871" http://localhost/cgi-bin/set_Aluno.cgi
+{
+  "sucess": "true",
+  "message": "Aluno cadastrado",
+  "dados": "null"
+}
+```
+**Teste a obtenção dos dados via GET através da ferramenta Curl**
+```bash
+curl -G  http://localhost/cgi-bin/get_Aluno.cgi
+
+[
+{
+    "cpf": "11545588871",
+    "nome": "Jhon",
+    "matricula": "1234567"
+  }
+]
+
