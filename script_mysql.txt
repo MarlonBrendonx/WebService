@@ -1,0 +1,68 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+USE `mydb` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Aluno`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Aluno` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NULL,
+  `matricula` VARCHAR(45) NULL,
+  `cpf` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Disciplina`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Disciplina` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NULL,
+  `descricao` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Cursa`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Cursa` (
+  `Aluno_id` INT NOT NULL,
+  `Disciplina_id` INT NOT NULL,
+  `ano` INT NULL,
+  `semestre` VARCHAR(45) NULL,
+  `nota` VARCHAR(45) NULL,
+  PRIMARY KEY (`Aluno_id`, `Disciplina_id`),
+  INDEX `fk_Aluno_has_Disciplina_Disciplina1_idx` (`Disciplina_id` ASC) VISIBLE,
+  INDEX `fk_Aluno_has_Disciplina_Aluno_idx` (`Aluno_id` ASC) VISIBLE,
+  CONSTRAINT `fk_Aluno_has_Disciplina_Aluno`
+    FOREIGN KEY (`Aluno_id`)
+    REFERENCES `mydb`.`Aluno` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Aluno_has_Disciplina_Disciplina1`
+    FOREIGN KEY (`Disciplina_id`)
+    REFERENCES `mydb`.`Disciplina` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
