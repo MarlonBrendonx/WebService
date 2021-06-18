@@ -25,3 +25,6 @@ ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
 
 ```bash
 mkdir /usr/lib/cgi-bin
+
+````
+** Execute o script de criação do banco contido em  **
