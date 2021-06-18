@@ -10,7 +10,7 @@
 
 
 ## Configurações:computer:
-**Permita que o apache interprete o shell** <br/>
+**\*Permita que o apache interprete o shell*** <br/>
 **Adicione a seguinte linha em /etc/apache2/apache2.conf**
 ```bash
 <Directory /var/www/cgi-bin>
