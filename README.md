@@ -23,4 +23,5 @@ ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
 ```
 **Crie o diretório /cgi-bin em /usr/lib/**
 
+```bash
 mkdir /usr/lib/cgi-bin
