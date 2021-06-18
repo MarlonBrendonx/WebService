@@ -1,0 +1,2 @@
+JSON_ARRAYAGG(JSON_OBJECT('nome_aluno', a.nome, 'id_aluno', w.Aluno_id, 'nome_disciplina', d.nome,		'id_disciplina', d.id, 'matricula', a.matricula, 'ano', w.ano, 'semestre',w.semestre,'nota',w.nota ))
+[{"ano": 23232, "nota": "2222", "id_aluno": 28, "semestre": "322", "matricula": "123456", "nome_aluno": "marlon", "id_disciplina": 14, "nome_disciplina": "teste"}]
